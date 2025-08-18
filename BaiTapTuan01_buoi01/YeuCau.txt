@@ -1,0 +1,6 @@
+Yêu cầu:
+
+Mỗi sinh viên tạo 01 github để commit bài tập
+Sinh viên thực hiện cài đặt môi trường làm việc.
+Sinh viên thực hiện tạo project ReactJS và start thành công trang chủ web chứa thông tin cá nhân của mình, commit lên github
+Tạo 01 file word trình bày từng bước mục 2, 3. Nộp mục 4 lên UTEX.
