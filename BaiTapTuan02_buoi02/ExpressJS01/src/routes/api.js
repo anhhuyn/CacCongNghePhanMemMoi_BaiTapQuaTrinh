@@ -1,10 +1,15 @@
 const express = require("express");
+
 const {
   createUser,
   handleLogin,
   getUser,
   getAccount,
 } = require("../controllers/userController");
+
+const productController = require("../controllers/productController");
+
+
 const auth = require("../middleware/auth");
 const delay = require("../middleware/delay");
 
@@ -23,4 +28,9 @@ routerAPI.post("/login", handleLogin);
 routerAPI.get("/user", getUser);
 routerAPI.get("/account", delay, getAccount);
 
-module.exports = routerAPI; // export default
+// Thêm route mới cho sản phẩm, lấy danh sách theo category và phân trang
+routerAPI.get("/products", productController.getProductsByCategory);
+routerAPI.get("/categories", productController.getCategories);
+
+
+module.exports = routerAPI;
