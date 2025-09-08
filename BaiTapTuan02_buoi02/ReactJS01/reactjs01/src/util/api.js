@@ -36,10 +36,16 @@ const getCategoriesApi = () => {
   return axios.get("/v1/api/categories");
 };
 
+const searchProductsApi = (params) => {
+  const URL_API = "/v1/api/search";
+  return axios.get(URL_API, { params });
+};
+
 export {
   createUserApi,
   loginApi,
   getUserApi,
   getProductsApi,
-  getCategoriesApi
+  getCategoriesApi,
+  searchProductsApi 
 };

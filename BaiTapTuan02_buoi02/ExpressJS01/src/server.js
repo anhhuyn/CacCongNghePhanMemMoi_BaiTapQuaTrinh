@@ -9,6 +9,9 @@ const configViewEngine = require('./config/viewEngine');
 const apiRoutes = require('./routes/api');
 const connection = require('./config/database');
 const { getHomepage } = require('./controllers/homeController');
+const syncProducts = require('./services/syncProducts');
+const elasticClient = require('./config/elastic'); 
+
 
 const app = express();
 const port = process.env.PORT || 8888;
@@ -47,6 +50,13 @@ app.get('*', (req, res) => {
 (async () => {
   try {
     await connection(); // MongoDB
+
+    
+    // ✅ Test kết nối ElasticSearch
+    const info = await elasticClient.info();
+    console.log("✅ Connected to Elasticsearch");
+    console.log(info);
+    await syncProducts();
     app.listen(port, () => {
       console.log(`✅ Backend NodeJS App listening on port ${port}`);
     });

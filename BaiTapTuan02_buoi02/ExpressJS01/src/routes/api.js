@@ -31,6 +31,7 @@ routerAPI.get("/account", delay, getAccount);
 // Thêm route mới cho sản phẩm, lấy danh sách theo category và phân trang
 routerAPI.get("/products", productController.getProductsByCategory);
 routerAPI.get("/categories", productController.getCategories);
+routerAPI.get('/search', productController.searchProducts);
 
 
 module.exports = routerAPI;
