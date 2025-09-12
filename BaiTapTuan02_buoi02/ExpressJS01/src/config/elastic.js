@@ -5,12 +5,12 @@ const client = new Client({
   node: 'https://localhost:9200',
   auth: {
     username: 'elastic',
-    password: 'aU4RDU9UA3cL2ha=Xe0*',
+    password: 'lLn3zEbQhpO1J1u1=*4l',
   },
   tls: {
     rejectUnauthorized: false
   },
-  compatibility: '8'   // ✅ ép về version 8
+  compatibility: '8'   
 });
 
 module.exports = client;

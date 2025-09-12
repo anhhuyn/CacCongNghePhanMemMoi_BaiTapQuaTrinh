@@ -65,12 +65,12 @@ const searchProducts = async (req, res) => {
       });
     }
 
-    // 📂 Lọc theo category
+    //  Lọc theo category
     if (category) {
       filter.push({ term: { category } });
     }
 
-    // 💰 Lọc theo khoảng giá
+    //  Lọc theo khoảng giá
     if (minPrice || maxPrice) {
       let range = {};
       if (minPrice) range.gte = parseFloat(minPrice);
@@ -78,12 +78,12 @@ const searchProducts = async (req, res) => {
       filter.push({ range: { price: range } });
     }
 
-    // 🎁 Lọc theo khuyến mãi
+    // Lọc theo khuyến mãi
 if (promotion === "true") {
   filter.push({ range: { discountPercent: { gt: 0 } } });
 }
 
-    // ⚡ Query Elasticsearch
+    //  Query Elasticsearch
     const result = await client.search({
       index: 'products',
       from,
