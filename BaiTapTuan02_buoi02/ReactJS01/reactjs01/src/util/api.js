@@ -41,11 +41,30 @@ const searchProductsApi = (params) => {
   return axios.get(URL_API, { params });
 };
 
+const getProductByIdApi = (id) => {
+  const URL_API = `/v1/api/products/${id}`;
+  return axios.get(URL_API);
+};
+
+const getProductsByCategoryApi = (category, limit = 4) => {
+  const URL_API = `/v1/api/products`;
+  return axios.get(URL_API, {
+    params: {
+      category,
+      limit
+    }
+  });
+};
+
+
+
 export {
   createUserApi,
   loginApi,
   getUserApi,
   getProductsApi,
   getCategoriesApi,
-  searchProductsApi 
+  searchProductsApi ,
+  getProductByIdApi,
+  getProductsByCategoryApi
 };

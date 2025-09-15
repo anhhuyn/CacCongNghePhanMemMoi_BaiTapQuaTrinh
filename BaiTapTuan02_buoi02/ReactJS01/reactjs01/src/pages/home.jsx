@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Card, Row, Col, Spin, Empty, Button, Space, Input, Slider, Select } from 'antd';
 import { getCategoriesApi, searchProductsApi } from '../util/api';
+import { Link } from 'react-router-dom';
+
 
 const { Meta } = Card;
 const { Search } = Input;
@@ -133,6 +135,7 @@ const HomePage = () => {
             return (
               <Col key={item._id || item.id} xs={24} sm={12} md={8} lg={6}>
                 <div style={{ height: "100%" }}>
+                  <Link to={`/product/${item._id || item.id}`}>
                   <Card
                     hoverable
                     style={{ height: "100%" }}
@@ -173,6 +176,7 @@ const HomePage = () => {
                       }
                     />
                   </Card>
+                  </Link>
                 </div>
               </Col>
             );

@@ -33,5 +33,8 @@ routerAPI.get("/products", productController.getProductsByCategory);
 routerAPI.get("/categories", productController.getCategories);
 routerAPI.get('/search', productController.searchProducts);
 
+routerAPI.get("/products/:id", productController.getProductById);
+
+
 
 module.exports = routerAPI;
